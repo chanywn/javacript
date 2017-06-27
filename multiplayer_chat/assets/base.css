@@ -1,0 +1,233 @@
+@charset "utf-8";
+/* Padding / Margin Reset */
+html, body, div, span, applet, object, iframe,  h1, h2, h3, h4, h5, h6, p, blockquote, pre,  a, abbr, acronym, address, big, cite, code,  del, dfn, em, font, img, ins, kbd, q, s, samp,  small, strike, strong, sub, sup, tt, var,  b, u, i, center,  dl, dt, dd, ol, ul, li,  fieldset, form, label, legend,  table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h2{
+    font-size: 1.7em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F3EFF3;
+}
+h3 {
+    font-size: 1.2em;
+}
+h4{
+    font-weight: 500;
+}
+h1{
+    font-weight: normal!important;
+}
+h1,h2,h3{
+    margin-top: 24px;
+    margin-bottom: 16px;
+    line-height: 1.25;
+}
+a{
+    color: rgb(29,150,235);
+}
+body {
+    font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    color: #333;
+    background-color: #FFFFFF;
+}
+
+/* form */
+input[type=text]:focus{
+      outline: 0;
+      box-shadow:none;
+    }
+
+/* tables */
+td, th {
+    padding: 5px 10px;
+    border: 1px solid #DDD;
+}
+table {
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    display: table;
+}
+/* 滚动条样式 */
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: darkgrey;
+  	outline: 1px solid slategrey;
+}
+
+::-moz-scrollbar {
+	width: 6px;
+	background-color: transparent;
+}
+
+::-moz-scrollbar-thumb {
+	border-radius: 2px;
+	background-color: darkgrey;
+  	outline: 1px solid slategrey;
+}
+body,html{
+    position: fixed;
+    overflow: hidden;
+	width: 100%;
+	height: 100%;
+    background: #f7f8f8;
+}
+#chat{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*border-top: 1px solid #ddd;*/
+    background: #f7f8f8;
+}
+#chat input[type=text]{
+    width: 90%;
+    height: 27px;
+    margin: 7px 3%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 2%;
+}
+#body{
+    position: fixed;
+    width: 100%;
+    height: 92%;
+    overflow-y: scroll;
+}
+ul#main{
+    padding: 15px;
+}
+ul#main li.message{
+    display: block;
+    margin: 10px 0;
+}
+.name{
+    color: darkgrey;
+    margin: 12px 0;
+}
+.speak {
+    background-color: antiquewhite;
+    padding: 12px;
+    border-radius: 5px;
+}
+ul#main li.log{
+    display: block;
+    height: 25px;line-height: 25px;
+    text-align: center;
+    font-size: .7em;
+    color: #5a5959;
+}
+ul#main li.log span{
+    padding: 4px 15px;
+    background: #eee;
+    border-radius: 5px;
+}
+.right{
+    text-align: right;
+}
+.right .speak{
+    background: #fff;
+    border: 1px solid #f1f1f1;
+}
+
+#login{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 999;
+}
+.panal{
+    background: black;
+    max-width: 420px;
+    padding: 20px;
+    margin: 11% auto;
+}
+.input-item {
+    margin-bottom: 15px;
+}
+.panal input[type=text], .panal input[type=password] {
+    width: 250px;
+    margin: 0 auto;
+    height: 20px;
+    padding: 5px 15px;
+    display: block;
+    border: 0;
+    background: black;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+.panal-title{
+    color: white!important;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 36px;
+    text-decoration: none;    
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.fade-out{
+    animation: fade-out;
+    animation-duration: 1s;
+    -webkit-animation: fade-out 1s;
+    display: none;
+}
+@keyframes fade-out {
+        0% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    
+@-webkit-keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3><%= title %></h3>
+            <hr>
+            <a href="/manage/create" class="btn btn-success">写文章</a>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>标题</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <% if (models.length) { %>  
+                <tbody>  
+                    <% models.forEach(function(item){ %> 
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.title %></td>
+                        <td>
+                            <a href="#" class="label label-default">编辑</a>
+                            <a href="/manage/delete/<%= item.id %>" class="label label-default">删除</a>
+                        </td>
+                    </tr>
+                    <% }) %>  
+                </tbody>  
+                <% } %>  
+            </table>
+        </div>
+    </div>
+</body>
+</html>

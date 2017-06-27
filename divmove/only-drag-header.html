@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>仅能拖动头部示例</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			overflow: hidden;
+		}
+
+		.box {
+			width: 400px;
+			height: 300px;
+			position: absolute;
+			left: 30%;
+			top: 30%;
+			border: 1px solid #c7c7c7;
+			background-color: #fff;
+			z-index: 128;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+			-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+			-moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+			cursor: default;
+		}
+		
+		.box h3 {
+			border-bottom: 1px solid #c7c7c7;
+			padding: 6px 15px;
+		}
+		.box p{
+			text-align: center;
+		    font-size: 22px;
+		    margin: 100px;
+		}
+	</style>
+
+</head>
+
+<body>
+<div class="box move">
+	<h3 class="move-head">头部</h3>
+	<p>仅能拖动头部示例</p>
+</div>
+<script type="text/javascript">
+var drag = {
+	className:function(className){
+		var obj = document.getElementsByClassName(className);
+
+		for(var i=0;i<obj.length;i++){
+			console.log(obj[i]);
+			this.Move(obj[i]);
+		}
+	},
+	Move:function (obj){
+		var headline = obj.firstChild.nextSibling;
+		headline.onmousedown = function(e) {
+			var x0 = e.clientX,
+				y0 = e.clientY,
+				offsetX=obj.offsetLeft,
+				offsetY=obj.offsetTop;
+
+			document.onmousemove = function(e){
+				var	x1 = e.clientX,
+					y1 = e.clientY,
+					x = x1 - x0,
+					y = y1 - y0;
+					
+				var	addX = offsetX+x,
+					addY = offsetY+y;
+
+				obj.style.left = addX+'px';
+				obj.style.top  = addY+'px';
+				
+			}
+			document.onmouseup = function(){
+				this.onmousemove = null;	
+			}
+		}
+	}
+}
+drag.className('move');
+</script>
+</body>
+</html>
